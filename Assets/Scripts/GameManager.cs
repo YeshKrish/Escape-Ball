@@ -14,12 +14,14 @@ public class GameManager : MonoBehaviour
 
     int count = 0;
 
+    // Start is called before the first frame update
     void Start()
     {
         ballColour = player.GetComponent<Renderer>();
 
     }
 
+    // Update is called once per frame
     void Update()
     {
      
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour
             mousePos.z = 25f;
 
             Vector3 spawnPos = Camera.main.ScreenToWorldPoint(mousePos);
-            //Restricts Clicking outofBounds
+
             if(spawnPos.z > 13f)
             {
                 spawnPos.z = 13f;
