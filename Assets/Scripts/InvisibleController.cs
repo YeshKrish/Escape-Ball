@@ -6,19 +6,20 @@ using TMPro;
 
 public class InvisibleController : MonoBehaviour
 {
-    public string winText;
-    public TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI ballQty;
+    [SerializeField] string winText;
+    [SerializeField] TextMeshProUGUI text;
 
-    public List<GameObject> inviCubes;
-    public float currentTime = 0;
+    [SerializeField] List<GameObject> inviCubes;
+    [SerializeField] float currentTime = 0;
     MeshRenderer meshComp;
     Collider inviCollider;
-    public float timeToToggleVicible =  5f;
+    [SerializeField] float timeToToggleVicible =  5f;
 
     int count = 0;
     int randValue;
     [HideInInspector]
-    public bool available = true;
+    [SerializeField] bool available = true;
 
     void Start()
     {
@@ -67,6 +68,7 @@ public class InvisibleController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         count++;
+        ballQty.text = count.ToString();
         Debug.Log(count);
         if(other.gameObject.name == "Sphere(Clone)" && count == 10)
         {
