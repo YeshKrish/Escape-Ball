@@ -7,7 +7,6 @@ using TMPro;
 public class InvisibleController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI ballQty;
-    [SerializeField] string winText;
     [SerializeField] TextMeshProUGUI text;
    
 
@@ -25,6 +24,7 @@ public class InvisibleController : MonoBehaviour
 
     void Start()
     {
+        text.gameObject.SetActive(true);
         text.enabled = false;
         available = true;
     }
