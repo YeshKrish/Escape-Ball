@@ -9,11 +9,13 @@ public class InvisibleController : MonoBehaviour
     [SerializeField] TextMeshProUGUI ballQty;
     [SerializeField] string winText;
     [SerializeField] TextMeshProUGUI text;
+   
 
     [SerializeField] List<GameObject> inviCubes;
     [SerializeField] float currentTime = 0;
     MeshRenderer meshComp;
     Collider inviCollider;
+    BoxCollider boxCollider;
     [SerializeField] float timeToToggleVicible =  5f;
 
     int count = 0;
@@ -48,7 +50,9 @@ public class InvisibleController : MonoBehaviour
         Debug.Log("Random Value:" + randValue);
         meshComp = inviCubes[randValue].GetComponent<MeshRenderer>();
         inviCollider = inviCubes[randValue].GetComponent<Collider>();
+        boxCollider = inviCubes[randValue].GetComponent<BoxCollider>();
         inviCollider.isTrigger = available;
+        boxCollider.center = new Vector3(0f, 0f, -2.5f);
         meshComp.enabled = !available;
         StartCoroutine(Visible(randValue));
 
@@ -60,6 +64,10 @@ public class InvisibleController : MonoBehaviour
         Debug.Log("Random Enum Value:" + randValue);
         meshComp = inviCubes[random].GetComponent<MeshRenderer>();
         inviCollider = inviCubes[random].GetComponent<Collider>();
+        boxCollider = inviCubes[random].GetComponent<BoxCollider>();
+        Debug.Log("BOx Before" + boxCollider.center);
+        boxCollider.center = new Vector3(0f, 0f, 0f);
+        Debug.Log("BOx After" + boxCollider.center);
         Debug.Log("T or F:" + available);
         inviCollider.isTrigger = available;
         meshComp.enabled = !available;
