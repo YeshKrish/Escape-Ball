@@ -22,6 +22,18 @@ public class InvisibleController : MonoBehaviour
     [HideInInspector]
     [SerializeField] bool available = true;
 
+    public int BallCount
+    {
+        get
+        {
+            return this.count;
+        }
+        set
+        {
+            this.count = value;
+        }
+    }
+
     void Start()
     {
         text.gameObject.SetActive(true);

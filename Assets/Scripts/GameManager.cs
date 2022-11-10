@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
             if(spawnPos.z > 13f)
             {
-                spawnPos.z = 13f;
+                spawnPos.z = 14f;
             } 
             if(spawnPos.y < 3f)
             {
