@@ -80,7 +80,6 @@ public class InvisibleController : MonoBehaviour
         Debug.Log("BOx Before" + boxCollider.center);
         boxCollider.center = new Vector3(0f, 0f, 0f);
         Debug.Log("BOx After" + boxCollider.center);
-        Debug.Log("T or F:" + available);
         inviCollider.isTrigger = available;
         meshComp.enabled = !available;
     }
