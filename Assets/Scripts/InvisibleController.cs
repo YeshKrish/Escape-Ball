@@ -6,6 +6,8 @@ using TMPro;
 
 public class InvisibleController : MonoBehaviour
 {
+    [SerializeField] AudioSource DoorOpen;
+    [SerializeField] AudioSource DoorClose;
     [SerializeField] TextMeshProUGUI ballQty;
     [SerializeField] TextMeshProUGUI text;
    
@@ -66,6 +68,7 @@ public class InvisibleController : MonoBehaviour
         inviCollider.isTrigger = available;
         boxCollider.center = new Vector3(0f, 0f, -2.5f);
         meshComp.enabled = !available;
+        DoorOpen.Play();
         StartCoroutine(Visible(randValue));
 
     }
@@ -82,6 +85,7 @@ public class InvisibleController : MonoBehaviour
         Debug.Log("BOx After" + boxCollider.center);
         inviCollider.isTrigger = available;
         meshComp.enabled = !available;
+        DoorClose.Play();
     }
 
     private void OnTriggerEnter(Collider other)

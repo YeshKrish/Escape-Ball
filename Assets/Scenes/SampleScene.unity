@@ -251,6 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7e45c1751ceb846a314d0f2db5df15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorOpen: {fileID: 111507030}
+  DoorClose: {fileID: 0}
   ballQty: {fileID: 1967952721}
   text: {fileID: 1676738784}
   inviCubes:
